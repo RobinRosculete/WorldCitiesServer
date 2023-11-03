@@ -23,7 +23,10 @@ public partial class Com584dbContext : IdentityDbContext<WorldCitiesUser>
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-
+        if (optionsBuilder.IsConfigured)
+        {
+            return;
+        }
         IConfigurationBuilder builder = new ConfigurationBuilder().AddJsonFile("appsettings2.json");
         IConfiguration configuration = builder.Build();
         //optionsBuilder.UseSqlServer(configuration.GetConnectionString("WorldCitiesContext"));
