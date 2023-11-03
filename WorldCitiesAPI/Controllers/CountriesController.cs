@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using WorldCitiesClass;
 using Microsoft.AspNetCore.Authorization;
+using WorldCitiesAPI.DTOs;
 
 namespace WorldCitiesAPI.Controllers
 {
@@ -22,6 +23,38 @@ namespace WorldCitiesAPI.Controllers
         {
             return _db.Countries.ToList();
         }
+
+        //LINQ statement to get country info inculding population
+        [HttpGet("Population/{id}")]
+        public CountryPopulation? GetPopulation(int id)
+        {
+            /* *SELECT ID, NAME, COUNT(POPULATION)
+               *FROM Countries
+               *WHERE Countrie.ID = ID*/
+             return _db.Countries.Where(c => c.Id == id).Select(c => new CountryPopulation()
+             {
+                 Id = c.Id,
+                 Name = c.Name,
+                 Population = c.Cities.Sum(t => t.Population)
+
+             }).SingleOrDefault();
+
+           /* return (from country in _db.Countries
+                    where country.Id == id
+                    select new CountryPopulation()
+                    {
+                        Id = country.Id,
+                        Name = country.Name,
+                        Population = country.Cities.Sum(t => t.Population)
+
+                    }).SingleOrDefault(); */
+
+                ;
+        }
+
+
+
+
         // GET: api/Countries/5
         [HttpGet("{id}", Name = "Get")]
         public string Get(int id)
@@ -46,5 +79,7 @@ namespace WorldCitiesAPI.Controllers
         public void Delete(int id)
         {
         }
+
+        
     }
 }
