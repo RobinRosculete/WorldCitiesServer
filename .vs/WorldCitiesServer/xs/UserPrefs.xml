@@ -1,12 +1,6 @@
 ﻿<Properties StartupConfiguration="{7225CAAF-091E-4B40-913D-3065C0092B9C}|https">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.WorldCitiesAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorldCitiesAPI/Controllers/CountriesController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorldCitiesClass/WorldCitiesUser.cs">
     <Files>
       <File FileName="WorldCitiesClass/Com584dbContext.cs" />
       <File FileName="WorldCitiesClass/Country.cs" />
@@ -16,20 +10,35 @@
       <File FileName="WorldCitiesAPI/appsettings.Development.json" />
       <File FileName="WorldCitiesAPI/Controllers/WeatherForecastController.cs" />
       <File FileName="WorldCitiesClass/WorldCitiesClass.csproj" />
+      <File FileName="WorldCitiesAPI/Data/WorldCitiesCsv.cs" Line="18" Column="1" />
+      <File FileName="WorldCitiesAPI/Controllers/SeedConttrollerController.cs" Line="95" Column="3" />
+      <File FileName="WorldCitiesClass/WorldCitiesUser.cs" Line="7" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="WorldCitiesServer" expanded="True">
-            <Node name="WorldCitiesAPI" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="CountriesController.cs" selected="True" />
+          <Node name="WorldCitiesServer">
+            <Node name="WorldCitiesAPI">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True" />
+            </Node>
+            <Node name="WorldCitiesClass">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
               </Node>
             </Node>
-            <Node name="WorldCitiesClass" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.WorldCitiesAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

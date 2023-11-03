@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 namespace WorldCitiesClass;
 
-public partial class Com584dbContext : DbContext
+public partial class Com584dbContext : IdentityDbContext<WorldCitiesUser>
 {
     public Com584dbContext()
     {
@@ -22,6 +23,7 @@ public partial class Com584dbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
+
         IConfigurationBuilder builder = new ConfigurationBuilder().AddJsonFile("appsettings2.json");
         IConfiguration configuration = builder.Build();
         //optionsBuilder.UseSqlServer(configuration.GetConnectionString("WorldCitiesContext"));
@@ -31,9 +33,8 @@ public partial class Com584dbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder
-            .UseCollation("utf8mb4_0900_ai_ci")
-            .HasCharSet("utf8mb4");
+     
+        base.OnModelCreating(modelBuilder);
 
         modelBuilder.Entity<City>(entity =>
         {
